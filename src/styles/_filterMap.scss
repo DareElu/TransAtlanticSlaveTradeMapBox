@@ -1,0 +1,105 @@
+.slaves-onboard-filter-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    // position: absolute;
+    // bottom: 15%;
+    // right: 10%;
+    span {
+        font-weight: bold;
+    }
+}
+.trade-year-filter-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+
+    span {
+        font-weight: bold;
+    }
+}
+// .slaves-onboard-filter {
+//     opacity: 1;
+// }
+
+.slaves-onboard-filter-title {
+    margin: 1rem 0rem;
+}
+.trade-year-filter-title {
+    margin: 1rem 0rem;
+}
+
+span.rs-tooltip.rs-tooltip-text.rs-edit {
+    opacity: 0;
+}
+
+.map-filters-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    background: rgba(28, 101, 143, 1);
+    width: 20%;
+    height: 90vh;
+    position: absolute;
+    top: 9.9%;
+    right: 0;
+    color: white;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 0.5s ease;
+    overflow: hidden;
+}
+
+.active-map-filter-controls {
+    transform: translateX(0%);
+    opacity: 1;
+}
+
+.show-all-trades-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    button {
+        margin: 0.3rem;
+    }
+    .submit-filter {
+        background: white;
+        color: rgb(77, 77, 77);
+    }
+}
+
+.show-all-trades-btn button {
+    font: 600 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
+    background-color: #fff;
+    color: #3386c0;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+}
+
+.show-all-trades-btn button:hover {
+    transform: scale(1.1);
+    background-color: #4ea0da;
+    color: #fff;
+}
+
+.reset-map-data {
+    font-size: 2rem;
+    cursor: pointer;
+    margin: 0rem 0.5rem;
+    background-color: whitesmoke;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 10%;
+    padding: 0rem 0.5rem;
+    transition: all 0.2s ease;
+}
+.reset-map-data:hover {
+    transform: scale(1.1);
+    background-color: #4ea0da;
+}

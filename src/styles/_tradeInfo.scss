@@ -1,0 +1,32 @@
+.map {
+    display: flex;
+    justify-content: space-between;
+}
+
+.map-view {
+    flex-grow: 3;
+    flex-basis: 60%;
+}
+
+.map-tools {
+    flex-grow: 1;
+    flex-basis: 40%;
+}
+
+.trade-info {
+    margin: 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: left;
+    span {
+        color: burlywood;
+    }
+    img {
+        margin-bottom: 3rem;
+        width: 60%;
+        object-fit: cover;
+        position: relative;
+        align-self: center;
+    }
+}

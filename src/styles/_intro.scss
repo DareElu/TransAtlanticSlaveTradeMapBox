@@ -1,0 +1,47 @@
+@mixin flex($justify, $align, $direction) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+
+nav {
+    display: flex;
+    height: 3rem;
+    background-color: rgb(238, 216, 189);
+    padding: 2rem 0rem;
+    ul {
+        flex: 4 1 40rem;
+        list-style: none;
+        @include flex(space-around, center, row);
+        transform: translate(-10%);
+        cursor: pointer;
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    }
+    h1 {
+        display: flex;
+        flex: 1 1 40rem;
+        align-items: center;
+        justify-content: flex-start;
+        transform: translate(20%);
+    }
+}
+
+.filter-overlay-btn button {
+    font: 600 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
+    background-color: #3386c0;
+    color: #fff;
+    display: inline-block;
+    margin: 0;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.filter-overlay-btn button:hover {
+    background-color: #4ea0da;
+}
