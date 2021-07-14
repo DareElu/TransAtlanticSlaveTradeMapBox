@@ -324,7 +324,7 @@ const Map = ({ filterViewStatus }) => {
         <div className="map">
             <ReactMapGL
                 {...viewport}
-                mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_API}
+                mapboxApiAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
                 mapStyle={mapStyle}
                 onViewportChange={(currentViewport) => {
                     setViewport(currentViewport);
