@@ -22,7 +22,6 @@ import MapFilters from "./MapFilters";
 //ICON
 import { FaMapMarkedAlt } from "react-icons/fa";
 import { IconContext } from "react-icons";
-import env from "react-dotenv";
 
 const Map = ({ filterViewStatus }) => {
     //VARIABLES
@@ -325,7 +324,7 @@ const Map = ({ filterViewStatus }) => {
         <div className="map">
             <ReactMapGL
                 {...viewport}
-                mapboxApiAccessToken={env.REACT_APP_MAPBOX_API}
+                mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_API}
                 mapStyle={mapStyle}
                 onViewportChange={(currentViewport) => {
                     setViewport(currentViewport);

@@ -25,8 +25,8 @@
     "web-vitals": "^1.1.1"
   },
   "scripts": {
-    "start": "react-dotenv && react-scripts start",
-    "build": "react-dotenv && react-scripts build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -46,11 +46,6 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
-    ]
-  },
-  "react-dotenv": {
-    "whitelist": [
-      "REACT_APP_MAPBOX_TOKEN"
     ]
   }
 }
