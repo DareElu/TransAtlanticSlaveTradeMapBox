@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 //MAP GL
+// eslint-disable-next-line import/no-webpack-loader-syntax
 import ReactMapGL, {
     Marker,
     Popup,
@@ -7,7 +8,7 @@ import ReactMapGL, {
     Layer,
     FlyToInterpolator,
     NavigationControl,
-} from "react-map-gl";
+} from "!react-map-gl";
 //TURF
 import * as turf from "@turf/turf";
 //DATA
