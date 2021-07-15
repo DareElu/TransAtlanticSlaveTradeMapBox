@@ -21,7 +21,8 @@
     "react-uuid": "^1.0.2",
     "round-slider": "^1.6.1",
     "use-state-with-callback": "^2.0.3",
-    "web-vitals": "^1.1.1"
+    "web-vitals": "^1.1.1",
+    "worker-loader": "^3.0.8"
   },
   "scripts": {
     "start": "react-scripts start",

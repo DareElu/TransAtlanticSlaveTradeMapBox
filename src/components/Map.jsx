@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
 //MAP GL
-// eslint-disable-next-line import/no-webpack-loader-syntax
 import ReactMapGL, {
     Marker,
     Popup,
@@ -8,7 +7,10 @@ import ReactMapGL, {
     Layer,
     FlyToInterpolator,
     NavigationControl,
-} from "!!react-map-gl";
+} from "react-map-gl";
+import mapboxgl from "mapbox-gl"; // This is a dependency of react-map-gl even if you didn't explicitly install it
+// eslint-disable-next-line import/no-webpack-loader-syntax
+import MapboxWorker from "worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker";
 //TURF
 import * as turf from "@turf/turf";
 //DATA
@@ -63,6 +65,7 @@ const Map = ({ filterViewStatus }) => {
     ]);
     const [mapStyle, setMapStyle] = useState(mapStyles[0].style);
 
+    mapboxgl.workerClass = MapboxWorker;
     const [viewport, setViewport] = useState({
         latitude: 18.1850507,
         longitude: -77.3947693,
