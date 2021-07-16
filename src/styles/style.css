@@ -246,6 +246,9 @@ div.overlays {
     display: block;
     width: 90vw;
   }
+  body {
+    overflow-x: hidden;
+  }
 }
 
 .map {

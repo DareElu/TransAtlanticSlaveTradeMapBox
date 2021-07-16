@@ -286,7 +286,6 @@ const Map = ({ filterViewStatus }) => {
             (trade) => trade["Slave-Count"] >= nrOfSlaves
         );
 
-        console.log(activeTradeData);
         setActiveTradeData(filteredTrades);
         return filteredTrades;
     };
