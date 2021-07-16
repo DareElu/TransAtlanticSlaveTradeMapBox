@@ -240,11 +240,11 @@ div.overlays {
 @media screen and (max-width: 599px) {
   .map-viewport {
     display: block;
-    width: 100vw;
+    width: 90vw;
   }
   div.overlays {
     display: block;
-    width: 100vw;
+    width: 90vw;
   }
 }
 
