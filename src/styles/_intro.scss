@@ -45,3 +45,11 @@ nav {
 .filter-overlay-btn button:hover {
     background-color: #4ea0da;
 }
+
+@media screen and (max-width: 599px) {
+    nav {
+        h1 {
+            opacity: 0;
+        }
+    }
+}

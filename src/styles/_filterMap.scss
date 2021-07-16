@@ -103,3 +103,15 @@ span.rs-tooltip.rs-tooltip-text.rs-edit {
     transform: scale(1.1);
     background-color: #4ea0da;
 }
+
+@media screen and (max-width: 599px) {
+    .map-filters-container {
+        position: absolute;
+        top: 63px;
+        right: 0px;
+
+        width: 100vw;
+        height: 100vh;
+        z-index: 1000;
+    }
+}

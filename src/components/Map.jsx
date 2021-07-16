@@ -66,10 +66,11 @@ const Map = ({ filterViewStatus }) => {
     const [mapStyle, setMapStyle] = useState(mapStyles[0].style);
 
     mapboxgl.workerClass = MapboxWorker;
+
     const [viewport, setViewport] = useState({
         latitude: 18.1850507,
         longitude: -77.3947693,
-        width: "70vw",
+        width: `100%`,
         height: "90vh",
         zoom: 3,
     });
@@ -326,59 +327,62 @@ const Map = ({ filterViewStatus }) => {
 
     return (
         <div className="map">
-            <ReactMapGL
-                {...viewport}
-                mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN_API}
-                mapStyle={mapStyle}
-                onViewportChange={(currentViewport) => {
-                    setViewport(currentViewport);
-                }}
-                className="map-view"
-            >
-                {activeTradeData.map((trade, index) => (
-                    <Trade
-                        key={Math.random() * 10000}
-                        index={index}
-                        trade={trade}
-                        showTradeRoute={showTradeRoute}
-                    />
-                ))}
-                <Source type="geojson" data={routeData}>
-                    <Layer {...routeLayer} />
-                </Source>
-                <Source type="geojson" data={shipData}>
-                    <Layer {...shipLayer} />
-                </Source>
-                <div className="btn-overlay">
-                    <button
-                        onClick={() =>
-                            setViewport({
-                                latitude: midPoint[1],
-                                longitude: midPoint[0],
-                                width: "70vw",
-                                height: "90vh",
-                                zoom: 2,
-                            })
-                        }
-                        id="zoom-rest"
-                    >
-                        Zoom Reset
-                    </button>
-                </div>
-                <NavigationControl className="nav-controls" />
-                <IconContext.Provider
-                    value={{ className: "mapview-library intro-styles" }}
+            <div className="map-viewport">
+                <ReactMapGL
+                    {...viewport}
+                    mapboxApiAccessToken={
+                        process.env.REACT_APP_MAPBOX_TOKEN_API
+                    }
+                    mapStyle={mapStyle}
+                    onViewportChange={(currentViewport) => {
+                        setViewport(currentViewport);
+                    }}
                 >
-                    <FaMapMarkedAlt
-                        onClick={() => setMapViewStatus(!mapViewStatus)}
+                    {activeTradeData.map((trade, index) => (
+                        <Trade
+                            key={Math.random() * 10000}
+                            index={index}
+                            trade={trade}
+                            showTradeRoute={showTradeRoute}
+                        />
+                    ))}
+                    <Source type="geojson" data={routeData}>
+                        <Layer {...routeLayer} />
+                    </Source>
+                    <Source type="geojson" data={shipData}>
+                        <Layer {...shipLayer} />
+                    </Source>
+                    <div className="btn-overlay">
+                        <button
+                            onClick={() =>
+                                setViewport({
+                                    latitude: midPoint[1],
+                                    longitude: midPoint[0],
+                                    width: "70vw",
+                                    height: "90vh",
+                                    zoom: 2,
+                                })
+                            }
+                            id="zoom-rest"
+                        >
+                            Zoom Reset
+                        </button>
+                    </div>
+                    <NavigationControl className="nav-controls" />
+                    <IconContext.Provider
+                        value={{ className: "mapview-library intro-styles" }}
+                    >
+                        <FaMapMarkedAlt
+                            onClick={() => setMapViewStatus(!mapViewStatus)}
+                        />
+                    </IconContext.Provider>
+                    <MapviewLibrary
+                        mapViewStatus={mapViewStatus}
+                        updateMapStyleHandler={updateMapStyleHandler}
+                        mapStyles={mapStyles}
                     />
-                </IconContext.Provider>
-                <MapviewLibrary
-                    mapViewStatus={mapViewStatus}
-                    updateMapStyleHandler={updateMapStyleHandler}
-                    mapStyles={mapStyles}
-                />
-            </ReactMapGL>
+                </ReactMapGL>
+            </div>
             <div className="map-tools">
                 <TradeInfo activeTradeData={activeTradeData} />
                 <MapFilters

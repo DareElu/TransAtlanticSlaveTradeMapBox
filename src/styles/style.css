@@ -78,6 +78,12 @@ nav h1 {
   background-color: #4ea0da;
 }
 
+@media screen and (max-width: 599px) {
+  nav h1 {
+    opacity: 0;
+  }
+}
+
 .purchase-location-marker {
   font-size: 2rem;
 }
@@ -102,9 +108,11 @@ nav h1 {
 }
 
 .map {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 40rem;
-          flex: 1 1 40rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .filters {
@@ -210,6 +218,36 @@ nav h1 {
   cursor: pointer;
 }
 
+.map-viewport {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  width: 60%;
+  height: 100%;
+}
+
+div.overlays {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 599px) {
+  .map-viewport {
+    display: block;
+    width: 100vw;
+  }
+  div.overlays {
+    display: block;
+    width: 100vw;
+  }
+}
+
 .map {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -231,8 +269,8 @@ nav h1 {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  -ms-flex-preferred-size: 40%;
-      flex-basis: 40%;
+  -ms-flex: 1 1 15rem;
+      flex: 1 1 15rem;
 }
 
 .trade-info {
@@ -456,5 +494,16 @@ span.rs-tooltip.rs-tooltip-text.rs-edit {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   background-color: #4ea0da;
+}
+
+@media screen and (max-width: 599px) {
+  .map-filters-container {
+    position: absolute;
+    top: 63px;
+    right: 0px;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+  }
 }
 /*# sourceMappingURL=style.css.map */

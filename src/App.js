@@ -17,7 +17,7 @@ function App() {
         steps: [
             {
                 element: ".intro-trade-animation",
-                intro: "click on any of the black ship icons to trigger the trade route animation relevant to the selected icon you will also be able to see the information related to the trade",
+                intro: "Click on any of the black ship icons to trigger the trade route animation relevant to the selected icon you will also be able to see the information related to the trade",
             },
             {
                 element: ".intro-styles",
@@ -25,7 +25,7 @@ function App() {
             },
             {
                 element: ".intro-filters",
-                intro: "You can use this button to open the filters library and filter the data based on the number of that disembarked at the destination port or by trade year or even by both",
+                intro: "You can use this button to open the filters library and filter the data based on the number of slaves that disembarked at the destination port or by trade year or even by both",
             },
         ],
     };

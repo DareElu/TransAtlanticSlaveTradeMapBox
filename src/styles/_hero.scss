@@ -20,8 +20,10 @@
     width: 100%;
 }
 
+//CHANGE
 .map {
-    flex: 1 1 40rem;
+    display: flex;
+    flex-wrap: wrap;
 }
 .filters {
     flex: 1 1 40rem;
@@ -110,5 +112,32 @@
         background-color: #33c06e;
         color: #fff;
         cursor: pointer;
+    }
+}
+
+//CHANGES
+.map-viewport {
+    display: flex;
+    position: relative;
+    width: 60%;
+    height: 100%;
+}
+//CHANGES
+div.overlays {
+    display: flex;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width: 599px) {
+    .map-viewport {
+        display: block;
+        width: 100vw;
+    }
+    div.overlays {
+        display: block;
+        width: 100vw;
     }
 }
